@@ -33,14 +33,16 @@ defmodule SongRankWeb.SongVote do
   end
 
   def handle_event("pick_song_1", _, socket) do
-    IO.puts(elem(socket.assigns.songs, 0).id)
+    song_id = elem(socket.assigns.songs, 0).id
+    SongRank.Vote.vote_for_song(song_id)
 
     socket = assign(socket, :songs, random_song_tuple())
     {:noreply, socket}
   end
 
   def handle_event("pick_song_2", _, socket) do
-    IO.puts(elem(socket.assigns.songs, 1).id)
+    song_id = elem(socket.assigns.songs, 1).id
+    SongRank.Vote.vote_for_song(song_id)
 
     socket = assign(socket, :songs, random_song_tuple())
     {:noreply, socket}
