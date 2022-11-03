@@ -21,9 +21,9 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 ## TODO:
   [ ] Add images
   [ ] Make top bar layout work
-  [ ] Ranking layout
+  [x] Ranking layout
   [x] Ranking pubsub
-  [ ] Ranking scheduled job
+  [x] Ranking scheduled job
   [ ] Save loser in vote
   [ ] Deploy
 

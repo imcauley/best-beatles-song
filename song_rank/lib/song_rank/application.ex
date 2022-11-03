@@ -4,6 +4,7 @@ defmodule SongRank.Application do
   @moduledoc false
 
   use Application
+  import Supervisor.Spec
 
   @impl true
   def start(_type, _args) do
@@ -15,9 +16,10 @@ defmodule SongRank.Application do
       # Start the PubSub system
       {Phoenix.PubSub, name: SongRank.PubSub},
       # Start the Endpoint (http/https)
-      SongRankWeb.Endpoint
+      SongRankWeb.Endpoint,
       # Start a worker by calling: SongRank.Worker.start_link(arg)
       # {SongRank.Worker, arg}
+      {SongRank.UpdateRankings, nil}
     ]
 
     # See https://hexdocs.pm/elixir/Supervisor.html
