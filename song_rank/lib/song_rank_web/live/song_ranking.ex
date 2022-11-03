@@ -10,13 +10,20 @@ defmodule SongRankWeb.SongRanking do
   def render(assigns) do
     ~L"""
     <div>
-      <%= for song <- @songs do %>
-        <div>
-        <%= song[:title] %>
-        <%= song[:votes] %>
-        </div>
+      <table>
+        <tr>
+          <th> Rank </th>
+          <th> Song </th>
+          <th> Votes </th>
+        </tr>
+      <%= for {song, rank} <- Enum.with_index(@songs) do %>
+        <tr>
+          <td> <%= rank + 1 %> </td>
+          <td> <%= song[:title] %> </td>
+          <td> <%= song[:votes] %> </td>
+        </tr>
       <% end %>
-
+      </table>
     </div>
     """
   end
