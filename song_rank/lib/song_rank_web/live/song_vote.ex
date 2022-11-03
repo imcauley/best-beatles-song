@@ -7,8 +7,6 @@ defmodule SongRankWeb.SongVote do
   end
 
   def render(assigns) do
-    song_1 = random_song()
-
     ~L"""
     <h1>Pick One</h1>
 
@@ -23,13 +21,9 @@ defmodule SongRankWeb.SongVote do
   end
 
   def random_song_tuple() do
-    {random_song(), random_song()}
-  end
-
-  def random_song() do
-    index = :rand.uniform(3)
-
-    SongRank.Repo.get(SongRank.Song, index)
+    song_1 = SongRank.Song.random_song()
+    song_2 = SongRank.Song.random_song(song_1.id)
+    {song_1, song_2}
   end
 
   def handle_event("pick_song_1", _, socket) do
