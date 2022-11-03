@@ -46,6 +46,17 @@ defmodule SongRank.Song do
     song_1[:votes] > song_2[:votes]
   end
 
+  def update_rankings() do
+    Phoenix.PubSub.broadcast(
+      SongRank.PubSub,
+      "update",
+      {
+        :ranking_update,
+        get_songs_with_votes()
+      }
+    )
+  end
+
   @doc false
   def changeset(song, attrs) do
     song
