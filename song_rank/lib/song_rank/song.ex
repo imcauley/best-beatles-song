@@ -29,6 +29,23 @@ defmodule SongRank.Song do
     SongRank.Repo.get(SongRank.Song, index)
   end
 
+  def get_songs_with_votes() do
+    songs = SongRank.Repo.all(SongRank.Song)
+    votes = SongRank.Vote.votes_by_song()
+
+    Enum.map(songs, fn song ->
+      %{
+        :title => song.title,
+        :votes => votes[song.id] || 0
+      }
+    end)
+    |> Enum.sort(&SongRank.Song.sort_ranking/2)
+  end
+
+  def sort_ranking(song_1, song_2) do
+    song_1[:votes] > song_2[:votes]
+  end
+
   @doc false
   def changeset(song, attrs) do
     song
