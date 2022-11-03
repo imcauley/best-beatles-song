@@ -19,6 +19,7 @@ defmodule SongRankWeb.Router do
 
     get("/", PageController, :index)
     live("/test", SongVote)
+    live("/ranking", SongRanking)
   end
 
   # Other scopes may use custom stacks.
