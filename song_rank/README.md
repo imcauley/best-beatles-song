@@ -20,7 +20,7 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 ## TODO:
   [ ] Add images
-  [ ] Make top bar layout work
+  [x] Make top bar layout work
   [x] Ranking layout
   [x] Ranking pubsub
   [x] Ranking scheduled job

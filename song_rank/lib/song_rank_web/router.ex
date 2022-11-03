@@ -18,7 +18,7 @@ defmodule SongRankWeb.Router do
     pipe_through(:browser)
 
     get("/", PageController, :index)
-    live("/test", SongVote)
+    live("/vote", SongVote)
     live("/ranking", SongRanking)
   end
 

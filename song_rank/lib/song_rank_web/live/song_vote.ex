@@ -8,8 +8,6 @@ defmodule SongRankWeb.SongVote do
 
   def render(assigns) do
     ~L"""
-    <h1>Pick One</h1>
-
     <div phx-click=pick_song_1>
       <%= elem(@songs, 0).title %>
     </div>
