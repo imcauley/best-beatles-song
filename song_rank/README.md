@@ -21,7 +21,7 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 ## TODO:
   [x] Dynamic images
   [x] Load all images
-  [ ] Vote Layout
+  [x] Vote Layout
   [x] Make top bar layout work
   [x] Ranking layout
   [x] Ranking pubsub
