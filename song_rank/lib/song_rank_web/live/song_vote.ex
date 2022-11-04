@@ -6,15 +6,25 @@ defmodule SongRankWeb.SongVote do
     {:ok, socket}
   end
 
-  def render(assigns) do
-    ~L"""
-    <div phx-click=pick_song_1>
-      <%= elem(@songs, 0).title %>
-    </div>
+  # def render(assigns) do
+  #   test_elem = "images/sgt_peppers_lonely_hearts_club_band.jpg"
 
-    <div phx-click=pick_song_2>
-      <%= elem(@songs, 1).title %>
-    </div>
+  #   ~L"""
+  # <div phx-click=pick_song_1>
+  #   <%= elem(@songs, 0).title %>
+  # </div>
+
+  # <div phx-click=pick_song_2>
+  #   <%= elem(@songs, 1).title %>
+  # </div>
+
+  #   <.image_card image={"sgt_peppers_lonely_hearts_club_band"} />
+  #   """
+  # end
+
+  def image_card(assigns) do
+    ~H"""
+      Happy birthday <%= @image %>!
     """
   end
 

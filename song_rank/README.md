@@ -19,7 +19,9 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   * Source: https://github.com/phoenixframework/phoenix
 
 ## TODO:
-  [ ] Add images
+  [x] Dynamic images
+  [ ] Load all images
+  [ ] Vote Layout
   [x] Make top bar layout work
   [x] Ranking layout
   [x] Ranking pubsub

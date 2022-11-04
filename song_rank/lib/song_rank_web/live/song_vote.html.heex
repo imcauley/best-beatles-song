@@ -1,0 +1,10 @@
+<div phx-click="pick_song_1">
+    <img src={"images/#{elem(@songs, 0).image}.jpg"}/>
+    <%= elem(@songs, 0).title %>
+</div>
+
+<div phx-click="pick_song_2">
+    <img src={"images/#{elem(@songs, 1).image}.jpg"}/>
+    <%= elem(@songs, 1).title %>
+</div>
+
