@@ -20,7 +20,7 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
 
 ## TODO:
   [x] Dynamic images
-  [ ] Load all images
+  [x] Load all images
   [ ] Vote Layout
   [x] Make top bar layout work
   [x] Ranking layout
