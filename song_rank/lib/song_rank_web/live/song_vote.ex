@@ -36,7 +36,8 @@ defmodule SongRankWeb.SongVote do
 
   def handle_event("pick_song_1", _, socket) do
     song_id = elem(socket.assigns.songs, 0).id
-    SongRank.Vote.vote_for_song(song_id)
+    loser_id = elem(socket.assigns.songs, 1).id
+    SongRank.Vote.vote_for_song(song_id, loser: loser_id)
 
     socket = assign(socket, :songs, random_song_tuple())
     {:noreply, socket}
@@ -44,7 +45,8 @@ defmodule SongRankWeb.SongVote do
 
   def handle_event("pick_song_2", _, socket) do
     song_id = elem(socket.assigns.songs, 1).id
-    SongRank.Vote.vote_for_song(song_id)
+    loser_id = elem(socket.assigns.songs, 0).id
+    SongRank.Vote.vote_for_song(song_id, loser: loser_id)
 
     socket = assign(socket, :songs, random_song_tuple())
     {:noreply, socket}

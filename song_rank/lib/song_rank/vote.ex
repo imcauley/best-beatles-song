@@ -5,12 +5,13 @@ defmodule SongRank.Vote do
 
   schema "votes" do
     field(:song_id, :integer)
+    field(:loser_song_id, :integer)
     field(:inserted_at, :utc_datetime)
   end
 
-  def vote_for_song(song_id) do
+  def vote_for_song(song_id, loser) do
     now = DateTime.truncate(DateTime.utc_now(), :second)
-    v = %SongRank.Vote{song_id: song_id, inserted_at: now}
+    v = %SongRank.Vote{song_id: song_id, loser_song_id: nil, inserted_at: now}
     SongRank.Repo.insert(v)
   end
 

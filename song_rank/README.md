@@ -26,7 +26,7 @@ Ready to run in production? Please [check our deployment guides](https://hexdocs
   [x] Ranking layout
   [x] Ranking pubsub
   [x] Ranking scheduled job
-  [ ] Save loser in vote
+  [x] Save loser in vote
   [ ] Deploy
 
   [ ] Cache ranking?
