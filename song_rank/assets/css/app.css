@@ -125,6 +125,15 @@
   padding: 0.7em;
 }
 
+.footer {
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  color: #999999;
+  text-align: center;
+}
+
 @keyframes fade-in-scale-keys {
   0% {
     scale: 0.95;
