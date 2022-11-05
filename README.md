@@ -26,3 +26,4 @@ Deploy: `fly deploy`
 
     [ ] Page for every song?
     [ ] Heatmap?
+    
