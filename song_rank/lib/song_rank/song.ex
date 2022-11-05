@@ -10,18 +10,18 @@ defmodule SongRank.Song do
   end
 
   def random_song() do
-    index = :rand.uniform(194)
+    index = :rand.uniform(191)
 
     SongRank.Repo.get(SongRank.Song, index)
   end
 
   def random_song(avoid) do
-    index = :rand.uniform(194)
+    index = :rand.uniform(191)
 
     if(index == avoid) do
       index = index + 1
 
-      if(index > 194) do
+      if(index > 192) do
         index = 1
       end
     end
